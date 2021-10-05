@@ -1,0 +1,2 @@
+class AteItselfError < StandardError
+end
