@@ -22,11 +22,11 @@ GEM
     rspec-support (3.10.2)
 
 PLATFORMS
-  x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   pry
   rspec
 
 BUNDLED WITH
-   2.2.28
+   2.2.8
