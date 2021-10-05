@@ -11,7 +11,7 @@ class Snake
   
     def create_snake
         size.times do |iteration|
-            @parts << [position[0], position[1]+iteration]
+            @parts << [position[0], position[1] + iteration]
         end
     end
   
@@ -24,7 +24,7 @@ class Snake
     end
   
     def set_start_position(max_x, max_y)
-        @position = [Random.rand(0..max_x-1), Random.rand(0..max_y-1)]
+        @position = [Random.rand(0..max_x - 1), Random.rand(0..max_y - 1)]
     end
   
     def increase

@@ -65,9 +65,10 @@ class Game
     end
 
     def check_if_snake_met_wall
-        snake.update_head(1,0) if snake.head[1] > gameboard.width - 1
-        snake.update_head(1, gameboard.width - 1) if snake.head[1] > gameboard.length - 1
-        snake.update_head(0, gameboard.length - 1) if snake.head[0] < 0
+        snake.update_head(1,0) if snake.head[1] > gameboard.width-1
+        snake.update_head(1, gameboard.width-1) if snake.head[1] < 0
+        snake.update_head(0, 0) if snake.head[0]  > gameboard.length-1
+        snake.update_head(0, gameboard.length-1) if snake.head[0] < 0
     end
 
     def check_if_snake_ate_food
@@ -93,7 +94,7 @@ class Game
         while in_game
             draw_food_and_snake
 
-            sleep(0.1)
+            sleep(0.2)
 
             if key = GetKey.getkey
                 in_game = execute_action(key)

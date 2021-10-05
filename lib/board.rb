@@ -8,7 +8,7 @@ class Board
     end
   
     def center
-        [board.length/2, board.first.length/2]
+        [board.length / 2, board.first.length / 2]
     end
   
     def print_text(text)
@@ -16,7 +16,7 @@ class Board
         i = 0
         text.chars.each do |char|
             board[center.first][center.last - char_center + i] = char
-            i+=1
+            i += 1
         end
     end
   
