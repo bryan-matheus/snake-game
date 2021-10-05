@@ -12,18 +12,21 @@ class Game
     def print_board
         system('clear')
         puts "Your size is: #{snake.size} |  [Q]uit"
+
         gameboard.board.each do
-            |line| puts line.each{ |item| item}.join(" ")
+            |line| puts line.each{ |item| item }.join(" ")
         end
     end
 
     def draw_food_and_snake
         gameboard.create_board
+
         @gameboard.board[food.x][food.y] = 'o'
 
         snake.parts.each do |part|
             @gameboard.board[part.first][part.last] = 'x'
         end
+
         print_board
     end
 
@@ -35,10 +38,14 @@ class Game
 
     def show_start_screen
         start = false
+
         while start == false
             show_message("[S]tart")
+
             key = GetKey.getkey
+
             sleep(0.5)
+
             if key && compare_key(key, 's')
                 start = true
             end
@@ -82,12 +89,16 @@ class Game
 
     def tick
         in_game = true
+
         while in_game
             draw_food_and_snake
+
             sleep(0.1)
+
             if key = GetKey.getkey
                 in_game = execute_action(key)
             end
+
             snake.step
             check_snake_position
         end
